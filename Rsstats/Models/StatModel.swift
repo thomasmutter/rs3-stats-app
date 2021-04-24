@@ -8,8 +8,9 @@
 import Foundation
 
 struct StatModel: Decodable, Identifiable {
-    var id: Int = -1
+    var id: Int = 0
     var name: String = "Empty"
-    var level: Int = -1
-    var xp: Int = -1
+    var level: Int = 0
+    var progress: Float = 0.0
+    var xp: Int = 0
 }

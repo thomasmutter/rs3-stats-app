@@ -11,7 +11,7 @@ import Combine
 class StatFetcher {
     
     let decoder = JSONDecoder()
-    let url = URL(string: "https://rs3-stats.herokuapp.com/rs-stats-api/v1/stats")!
+    let url = URL(string: "https://rs3-stats.herokuapp.com/rs-stats-api/v1/stats/")!
     var stats = Set<AnyCancellable>()
 
     func fetchStats() -> AnyPublisher<[StatModel], Never> {

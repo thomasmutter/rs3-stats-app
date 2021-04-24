@@ -19,6 +19,8 @@ struct ProgressBar: View {
                 Rectangle().frame(width: min(CGFloat(self.value)*geometry.size.width, geometry.size.width) , height: geometry.size.height)
                     .foregroundColor(.green)
                     .border(Color.black, width: 1)
+                Text("\(Int(round(self.value*100)))%")
+                    .position(x: geometry.size.width/2, y: geometry.size.height/2)
             }
         }
     }

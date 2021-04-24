@@ -30,7 +30,7 @@ struct StatDetailsView: View {
             HStack{
                 Text("\(stat.level)")
                     .padding(.leading)
-                ProgressBar(value: Float(Float.random(in: 0...1)))
+                ProgressBar(value: stat.progress)
                     .frame(height: 30)
                 Text("\(stat.level + 1)")
                     .padding(.trailing)
