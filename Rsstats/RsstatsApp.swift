@@ -11,7 +11,7 @@ import SwiftUI
 struct RsstatsApp: App {
     var body: some Scene {
         WindowGroup {
-            StatListView()
+            UserInputView()
         }
     }
 }

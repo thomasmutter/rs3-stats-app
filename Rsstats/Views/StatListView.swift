@@ -9,33 +9,20 @@ import SwiftUI
 
 struct StatListView: View {
     
-    @ObservedObject private var vm: StatListViewModel = StatListViewModel()
+    let stats: [StatModel]
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                List(vm.stats) { stat in
-                    NavigationLink(destination: StatDetailsView(stat: stat)) {
-                        StatRowView(stat: stat)
-                    }
-                    .navigationTitle("Rs3 Stats")
+            List(stats) { stat in
+                NavigationLink(destination: StatDetailsView(stat: stat)) {
+                    StatRowView(stat: stat)
                 }
-                HStack {
-                    Button(action: { vm.loadStats() }) {
-                        Text("Fetch")
-                    }
-                    Spacer()
-                    Button(action: { vm.clearStats() }) {
-                        Text("Clear")
-                    }
-                }
-                .padding()
             }
-        }
+            .padding()
     }
 }
 
 struct IntroView_Previews: PreviewProvider {
     static var previews: some View {
-        StatListView()
+        StatListView(stats: [StatModel()])
     }
 }

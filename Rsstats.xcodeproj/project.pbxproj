@@ -14,11 +14,12 @@
 		67F21A99263163A800D6A0A9 /* RsstatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21A98263163A800D6A0A9 /* RsstatsUITests.swift */; };
 		67F21AAA2631750500D6A0A9 /* StatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21AA92631750500D6A0A9 /* StatListView.swift */; };
 		67F21AB12632B84B00D6A0A9 /* StatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21AB02632B84B00D6A0A9 /* StatModel.swift */; };
-		67F21AB92632BC4100D6A0A9 /* StatFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21AB82632BC4100D6A0A9 /* StatFetcher.swift */; };
+		67F21AB92632BC4100D6A0A9 /* RsStatsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21AB82632BC4100D6A0A9 /* RsStatsApi.swift */; };
 		67F21AC82632D97700D6A0A9 /* StatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21AC72632D97700D6A0A9 /* StatRowView.swift */; };
-		67F21AD92632F8B800D6A0A9 /* StatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21AD82632F8B800D6A0A9 /* StatListViewModel.swift */; };
+		67F21AD92632F8B800D6A0A9 /* UserInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21AD82632F8B800D6A0A9 /* UserInputViewModel.swift */; };
 		67F21AEC26334CBC00D6A0A9 /* StatDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21AEB26334CBC00D6A0A9 /* StatDetailsView.swift */; };
 		67F21AF826334F2F00D6A0A9 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21AF726334F2F00D6A0A9 /* ProgressBar.swift */; };
+		67F21B0A2638150300D6A0A9 /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F21B092638150300D6A0A9 /* UserInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,11 +53,12 @@
 		67F21A9A263163A800D6A0A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67F21AA92631750500D6A0A9 /* StatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListView.swift; sourceTree = "<group>"; };
 		67F21AB02632B84B00D6A0A9 /* StatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatModel.swift; sourceTree = "<group>"; };
-		67F21AB82632BC4100D6A0A9 /* StatFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatFetcher.swift; sourceTree = "<group>"; };
+		67F21AB82632BC4100D6A0A9 /* RsStatsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsStatsApi.swift; sourceTree = "<group>"; };
 		67F21AC72632D97700D6A0A9 /* StatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatRowView.swift; sourceTree = "<group>"; };
-		67F21AD82632F8B800D6A0A9 /* StatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListViewModel.swift; sourceTree = "<group>"; };
+		67F21AD82632F8B800D6A0A9 /* UserInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputViewModel.swift; sourceTree = "<group>"; };
 		67F21AEB26334CBC00D6A0A9 /* StatDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDetailsView.swift; sourceTree = "<group>"; };
 		67F21AF726334F2F00D6A0A9 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		67F21B092638150300D6A0A9 /* UserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				67F21AC72632D97700D6A0A9 /* StatRowView.swift */,
 				67F21AA92631750500D6A0A9 /* StatListView.swift */,
 				67F21AEB26334CBC00D6A0A9 /* StatDetailsView.swift */,
+				67F21B092638150300D6A0A9 /* UserInputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,7 +170,7 @@
 		67F21AD72632F8A400D6A0A9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				67F21AD82632F8B800D6A0A9 /* StatListViewModel.swift */,
+				67F21AD82632F8B800D6A0A9 /* UserInputViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -183,7 +186,7 @@
 		67F21B02263405D100D6A0A9 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				67F21AB82632BC4100D6A0A9 /* StatFetcher.swift */,
+				67F21AB82632BC4100D6A0A9 /* RsStatsApi.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -318,13 +321,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F21A7C263163A700D6A0A9 /* RsstatsApp.swift in Sources */,
+				67F21B0A2638150300D6A0A9 /* UserInputView.swift in Sources */,
 				67F21AC82632D97700D6A0A9 /* StatRowView.swift in Sources */,
 				67F21AAA2631750500D6A0A9 /* StatListView.swift in Sources */,
 				67F21AF826334F2F00D6A0A9 /* ProgressBar.swift in Sources */,
 				67F21AB12632B84B00D6A0A9 /* StatModel.swift in Sources */,
-				67F21AB92632BC4100D6A0A9 /* StatFetcher.swift in Sources */,
+				67F21AB92632BC4100D6A0A9 /* RsStatsApi.swift in Sources */,
 				67F21AEC26334CBC00D6A0A9 /* StatDetailsView.swift in Sources */,
-				67F21AD92632F8B800D6A0A9 /* StatListViewModel.swift in Sources */,
+				67F21AD92632F8B800D6A0A9 /* UserInputViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
