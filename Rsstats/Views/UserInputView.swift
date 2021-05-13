@@ -16,15 +16,14 @@ struct UserInputView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                Text("Enter your username")
-                    .navigationTitle("Search")
-                    .navigationBarTitleDisplayMode(.inline)
                 TextField("Enter a username", text: $username)
                     .multilineTextAlignment(TextAlignment.center)
                     .autocapitalization(.none)
+                    .navigationTitle("Search")
+                    .navigationBarTitleDisplayMode(.inline)
                 Spacer()
                     .frame(height: 30)
-                Button("Fetch stats") {
+                Button("Search for stats") {
                     vm.loadStats(username: username)
                 }
                 .disabled(username.isEmpty)
@@ -32,6 +31,8 @@ struct UserInputView: View {
                 .background(Color.blue)
                 .foregroundColor(Color.white)
                 .cornerRadius(10)
+                Text(vm.errorMessage)
+                    .foregroundColor(.red)
                 NavigationLink(
                     destination: StatListView(stats: vm.stats),
                     isActive: $vm.statsLoaded,

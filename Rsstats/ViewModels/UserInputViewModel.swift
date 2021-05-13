@@ -11,25 +11,41 @@ import Combine
 class UserInputViewModel: ObservableObject {
     @Published var stats: [StatModel] = []
     @Published var statsLoaded: Bool = false
+    @Published var errorMessage = ""
     
-    private var bag = Set<AnyCancellable>()
-    private let fetcher = RsStatsApi()
+    private var cancellable: AnyCancellable?
+    private let api = RsStatsApi()
     
     func loadStats(username: String = "") {
-        print("starting")
-        let publisher = fetcher.fetchStats(username: username)
+        errorMessage = ""
+        let publisher = api.fetchStats(username: username)
         
         // Instead of assign, use sink to fill both stats and a
-        publisher
+        cancellable = publisher
+            .receive(on: RunLoop.main)
             .sink(
-                receiveCompletion: { print($0) },
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        self.statsLoaded = true
+                    case .failure(let completion):
+                        self.handleError(error: completion)
+                    }
+                },
                 receiveValue: {
-                    self.statsLoaded = true
                     self.stats = $0
                 }
             )
-//            .assign(to: \.stats, on: self)
-            .store(in: &bag)
+    }
+    
+    func handleError(error: RequestError) {
+        switch error {
+        case .failedRequest:
+            errorMessage = "An error has occurred"
+        case .userNotFound:
+            errorMessage = "User not found"
+        }
+        print("Error has occurred: \(error)")
     }
     
     func clearStats() {
